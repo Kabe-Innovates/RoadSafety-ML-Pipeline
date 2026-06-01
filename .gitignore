@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Caches and tooling
+.pytest_cache/
+.mypy_cache/
+
+# Data science outputs
+models/
+results/
+cache/
+
+# Serialized artifacts
+*.joblib
+*.pkl
