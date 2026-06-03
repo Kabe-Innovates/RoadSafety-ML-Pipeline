@@ -1,63 +1,55 @@
 # RoadSafety-ML-Pipeline
-A predictive analytics project using machine learning to forecast traffic accident risks and collision severity.
+Predictive analytics pipeline for traffic accident occurrence using a notebook-first, explainable ML workflow.
 
-## Project goals
-- Data Preprocessing & Cleaning
-- EDA
-- Feature Engineering & Encoding
-- Machine Learning Modeling
-- Model Evaluation & Tuning
+## Scope and Objectives
+- Build a clear, reproducible end-to-end pipeline for accident prediction.
+- Prioritize interpretability with foundational models and transparent preprocessing.
+- Capture metrics and artifacts for stakeholder review and future iteration.
 
-## Dataset
-- File: datasets/dataset_traffic_accident_prediction1.csv
-- Rows: 840, Columns: 14
+## Data Asset
+- Primary file: datasets/dataset_traffic_accident_prediction1.csv
+- Shape: 840 rows, 14 columns
 - Target: Accident (binary)
-- Missing values: 42 per column
-- Numerical: Traffic_Density, Speed_Limit, Number_of_Vehicles, Driver_Alcohol, Driver_Age, Driver_Experience
-- Categorical: Weather, Road_Type, Time_of_Day, Accident_Severity, Road_Condition, Vehicle_Type, Road_Light_Condition
+- Missing values: 42 per column (consistent across features)
+- Numerical features: Traffic_Density, Speed_Limit, Number_of_Vehicles, Driver_Alcohol, Driver_Age, Driver_Experience
+- Categorical features: Weather, Road_Type, Time_of_Day, Accident_Severity, Road_Condition, Vehicle_Type, Road_Light_Condition
 
-## Notebook-Based Workflow
-All work is organized in Jupyter notebooks for interactive learning:
+## Notebook Workflow
+All analysis and modeling are organized in the notebooks directory:
 
-- **01_EDA.ipynb** — Exploratory Data Analysis
-- **02_Preprocessing.ipynb** — Data Cleaning & Missing Value Handling
-- **03_Feature_Engineering.ipynb** — Feature Encoding & Scaling
-- **04_Model_Training.ipynb** — Train foundational models
-- **05_Model_Evaluation.ipynb** — Compare models and analyze performance
-- **06_Hyperparameter_Tuning.ipynb** (optional) — Improve best model
-- **07_Final_Report.ipynb** — Summarize findings
+- 01_Preprocessing.ipynb — Data cleaning and missing value handling
+- 02_EDA.ipynb — Exploratory data analysis
+- 03_Feature_Engineering.ipynb — Encoding, scaling, and feature preparation
+- 04_Model_Training.ipynb — Train baseline models
+- 05_Model_Evaluation.ipynb — Compare models and metrics
+- 07_Final_Report.ipynb — Final summary and documentation
 
-## Quick start
-1. Create and activate a virtual environment
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+## Modeling Standards
+- Models: Logistic Regression, Decision Tree, Random Forest, SVM
+- Validation: train-test split (80/20)
+- Imputation: median (numerical), mode (categorical)
+- Encoding: one-hot for categorical variables
+- Scaling: standardization for linear and SVM models
 
-2. Install dependencies
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Results (Latest Stored)
+Metrics are stored in results/model_metrics.csv and results/model_metrics.json. Current highlights:
 
-3. Start Jupyter
-   ```bash
-   jupyter notebook
-   ```
+- Decision Tree: accuracy 0.9404, precision 0.8487, recall 0.9619, $F_1$ 0.9018
+- Logistic Regression: accuracy 0.6504, precision 0.4277, recall 0.6762, $F_1$ 0.5240
 
-4. Open and run notebooks sequentially: 01_EDA → 02_Preprocessing → etc.
-
-## Modeling approach
-- Foundational models: Logistic Regression, Decision Tree, Random Forest, SVM
-- Validation: Train-test split (80-20)
-- Imputation: Median for numerical, mode for categorical features
-- Encoding: One-hot for categorical features
-- Scaling: StandardScaler for numeric features
-
-## Project structure
+## Project Structure
 ```
-notebooks/          Jupyter notebooks (main workflow)
-datasets/           Raw data
-models/             Trained model artifacts (.joblib)
-results/            Metrics and evaluation reports
-cache/              Intermediate outputs
+datasets/            Raw and intermediate data files
+models/              Trained model artifacts (.joblib)
+notebooks/           Primary workflow notebooks
+results/             Metrics and evaluation outputs
 ```
+
+## Outputs
+- Trained models: models/<model_name>.joblib
+- Metrics: results/model_metrics.csv, results/model_metrics.json
+
+## Governance Notes
+- Re-run preprocessing if the source dataset changes.
+- Update metrics files after model retraining to keep results current.
+- Document key decisions in 07_Final_Report.ipynb for stakeholder traceability.
