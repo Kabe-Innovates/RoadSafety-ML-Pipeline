@@ -12,11 +12,7 @@ env/
 # Caches and tooling
 .pytest_cache/
 .mypy_cache/
-
-# Data science outputs
-models/
-results/
-cache/
+.DS_Store
 
 # Serialized artifacts
 *.joblib

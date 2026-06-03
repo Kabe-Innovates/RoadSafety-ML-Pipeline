@@ -1,7 +1,7 @@
-# Copilot Instructions: RoadSafety-ML-Pipeline
+# Copilot Instructions: RoadSafety-ML-Pipeline (Notebook-Only)
 
 ## Project goal
-Build a clear, beginner-friendly machine learning pipeline to predict traffic accident occurrence.
+Build a clear, beginner-friendly machine learning pipeline to predict traffic accident occurrence using Jupyter notebooks for interactive learning and exploration.
 
 ## Data context
 - Dataset: datasets/dataset_traffic_accident_prediction1.csv
@@ -19,10 +19,19 @@ Build a clear, beginner-friendly machine learning pipeline to predict traffic ac
 - Scaling: standardize numeric features for linear and SVM models
 
 ## Workflow guidance
-- Keep reusable logic in src/ modules
-- Use scripts for the main pipeline; create notebooks only for EDA when asked
-- Prefer small, testable functions with clear inputs and outputs
+- All code lives in Jupyter notebooks (notebooks/ directory)
+- Each phase has its own numbered notebook: 01_EDA, 02_Preprocessing, 03_Feature_Engineering, etc.
+- Document findings and decisions in markdown cells
+- Execute cells sequentially to build the pipeline step-by-step
+- Save outputs (models, metrics) to models/ and results/ directories
+
+## Notebook structure
+- Each notebook starts with imports and data loading
+- Use markdown headers to organize sections clearly
+- Add comments explaining what each cell does
+- Include visualizations to explore patterns and validate preprocessing
 
 ## Outputs
-- Save metrics to results/model_metrics.csv
-- Save models to models/<model_name>.joblib
+- Save trained models to models/<model_name>.joblib
+- Save metrics to results/model_metrics.csv and results/model_metrics.json
+- Keep visualizations in notebooks for interactive feedback
