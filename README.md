@@ -15,6 +15,9 @@ Predictive analytics pipeline for traffic accident occurrence using a notebook-f
 - Categorical features: Weather, Road_Type, Time_of_Day, Accident_Severity, Road_Condition, Vehicle_Type, Road_Light_Condition
 
 ## Notebook Workflow
+
+Refer : [Google Collab Notebooks for Glance](https://drive.google.com/drive/folders/1bclW24S9gh1d49ZoeU1UBwELxpZpua-e?usp=drive_link)
+
 All analysis and modeling are organized in the notebooks directory:
 
 - 01_Preprocessing.ipynb — Data cleaning and missing value handling
